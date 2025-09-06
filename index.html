@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE BOX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>
+                    <i class="fa-solid fa-film"></i>MOVIE<span>BOX</span></h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link active">
+                        <i class="fa-solid fa-house-signal"></i>Home</a></li>
+                    <li class="nav-item"><a href="Trailer.html" class="nav-link">
+                        <i class="fa-solid fa-compact-disc"></i>Movies</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">
+                        <i class="fa-solid fa-tv"></i>Tv Series</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">
+                        <i class="fa-solid fa-calendar-days"></i>Upcoming</a></li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search movies...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Featured Carousel -->
+        <section class="featured-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <img src="imges/home2.jpg" alt="Featured Movie">
+                        <div class="slide-content">
+                            <h2>INFINITY WAR</h2>
+                            <div class="rating-year">
+                                <span class="rating"><i class="fas fa-star"></i> 9.0</span>
+                                <span class="year">2014</span>
+                            </div>
+                            <p>A team of Heros that fought against Thanos attempt to ensure humanity's survival.</p>
+                            <button class="btn watch-trailer">Watch Trailer</button>
+                            <button class="btn add-watchlist"><i class="far fa-bookmark"></i> Add to Watchlist</button>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imges/home3.jpg" alt="Featured Movie">
+                        <div class="slide-content">
+                            <h2>Spiderman</h2>
+                            <div class="rating-year">
+                                <span class="rating"><i class="fas fa-star"></i> 8.8</span>
+                                <span class="year">2021</span>
+                            </div>
+                            <p>No way home.</p>
+                            <button class="btn watch-trailer">Watch Trailer</button>
+                            <button class="btn add-watchlist"><i class="far fa-bookmark"></i> Add to Watchlist</button>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imges/home1.jpg" alt="Featured Movie">
+                        <div class="slide-content">
+                            <h2>Venom</h2>
+                            <div class="rating-year">
+                                <span class="rating"><i class="fas fa-star"></i> 9.5</span>
+                                <span class="year">2008</span>
+                            </div>
+                            <p>A young man that got chosen by an alian parasite.</p>
+                            <button class="btn watch-trailer">Watch Trailer</button>
+                            <button class="btn add-watchlist"><i class="far fa-bookmark"></i> Add to Watchlist</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters">
+            <div class="container">
+                <div class="filter-group">
+                    <label for="genre-filter">Genre:</label>
+                    <select id="genre-filter">
+                        <option value="">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="horror">Horror</option>
+                        <option value="scifi">Sci-Fi</option>
+                        <option value="romance">Romance</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter">Year:</label>
+                    <select id="year-filter">
+                        <option value="">Any Year</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="older">Older</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="rating-filter">Rating:</label>
+                    <select id="rating-filter">
+                        <option value="">Any Rating</option>
+                        <option value="9">9.0+</option>
+                        <option value="8">8.0+</option>
+                        <option value="7">7.0+</option>
+                        <option value="6">6.0+</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie Grid -->
+        <section class="movie-grid">
+            <div class="container">
+                <h2 class="section-title">Featured Movies</h2>
+                <div class="movies-container">
+                    <!-- Movie Cards will be dynamically inserted here -->
+                    <div class="movie-card">
+                        <img src="imges/m4.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">JohnWick 2</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2017</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 10.0</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="imges/m3.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Batman vs Superman</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2018</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.9</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="imges/m2.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Dunkerk</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2016</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.6</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming10.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Gardian Of The Galaxy</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">1999</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.7</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming4.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Iron Lady</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">1994</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.3</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="imges/coming2.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Warcraft</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2010</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 8.8</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="imges/coming8.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Black Widow</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2011</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 8.9</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="imges/coming9.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Antman</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2013</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.9</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming3.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Rampage</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">1999</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 8.7</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming4.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Iron Lady</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">1994</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.3</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming5.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Justice league</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">1994</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 8.9</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming6.jpeg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Doctor Strange</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2003</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 9.0</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-card">
+                        <img src="imges/coming7.jpg" alt="Movie Poster" class="movie-poster">
+                        <div class="movie-info">
+                            <h3 class="movie-title">Captain Marvel</h3>
+                            <div class="movie-meta">
+                                <span class="movie-year">2019</span>
+                                <span class="movie-rating"><i class="fas fa-star"></i> 8.4</span>
+                            </div>
+                        </div>
+                        <div class="movie-overlay">
+                            <button class="btn quick-view">Quick View</button>
+                            <button class="btn watchlist-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Sections -->
+        <section class="movie-grid">
+            <div class="container">
+                <h2 class="section-title">Top Rated</h2>
+                <div class="movies-container">
+                    <!-- Top rated movies would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-grid">
+            <div class="container">
+                <h2 class="section-title">Coming Soon</h2>
+                <div class="movies-container">
+                    <!-- Coming soon movies would go here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Movie Detail Modal (would be a separate page in production) -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="movie-detail">
+                <div class="movie-poster-section">
+                    <img src="https://source.unsplash.com/random/400x600/?movie,action" alt="Movie Poster" class="detail-poster">
+                    <div class="movie-stats">
+                        <div class="stat">
+                            <span class="label">Rating</span>
+                            <span class="value"><i class="fas fa-star"></i> 8.8</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Duration</span>
+                            <span class="value">2h 30min</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Release</span>
+                            <span class="value">2010</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Genre</span>
+                            <span class="value">Action, Sci-Fi</span>
+                        </div>
+                    </div>
+                    <button class="btn full-width add-watchlist-detail">
+                        <i class="far fa-bookmark"></i> Add to Watchlist
+                    </button>
+                </div>
+                <div class="movie-info-section">
+                    <h1 class="movie-title-detail">Inception</h1>
+                    <p class="movie-tagline">Your mind is the scene of the crime.</p>
+                    
+                    <div class="movie-description">
+                        <h3>Storyline</h3>
+                        <p>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team.</p>
+                    </div>
+                    
+                    <div class="movie-cast">
+                        <h3>Top Cast</h3>
+                        <div class="cast-container">
+                            <div class="cast-member">
+                                <img src="https://source.unsplash.com/random/100x100/?actor,leonardo" alt="Leonardo DiCaprio">
+                                <h4>Leonardo DiCaprio</h4>
+                                <p>Cobb</p>
+                            </div>
+                            <div class="cast-member">
+                                <img src="https://source.unsplash.com/random/100x100/?actor,marion" alt="Marion Cotillard">
+                                <h4>Marion Cotillard</h4>
+                                <p>Mallorie</p>
+                            </div>
+                            <div class="cast-member">
+                                <img src="https://source.unsplash.com/random/100x100/?actor,tom" alt="Tom Hardy">
+                                <h4>Tom Hardy</h4>
+                                <p>Eames</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-trailer">
+                        <h3>Trailer</h3>
+                        <div class="trailer-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/YoHD9XEInc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="user-reviews">
+                        <h3>User Reviews</h3>
+                        <div class="review">
+                            <div class="review-header">
+                                <h4>John D.</h4>
+                                <div class="review-rating"><i class="fas fa-star"></i> 9.5</div>
+                            </div>
+                            <p>This movie completely blew my mind! The concept is so original and the execution is flawless. Nolan is a genius!</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <h4>Sarah M.</h4>
+                                <div class="review-rating"><i class="fas fa-star"></i> 8.0</div>
+                            </div>
+                            <p>Visually stunning and intellectually stimulating. It took me two viewings to fully appreciate everything that was happening.</p>
+                        </div>
+                        <div class="add-review">
+                            <h4>Add Your Review</h4>
+                            <div class="rating-input">
+                                <span>Rating: </span>
+                                <div class="stars">
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <textarea placeholder="Share your thoughts about this movie..."></textarea>
+                            <button class="btn submit-review">Submit Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Cine<span>Discover</span></h2>
+                    <p>Your ultimate movie discovery platform.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="#">Top Rated</a></li>
+                        <li><a href="#">My Watchlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Genres</h3>
+                    <ul>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Horror</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest movie updates.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CineDiscover. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
